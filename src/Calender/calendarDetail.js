@@ -43,9 +43,18 @@ const CalendarDetail = ({ month, day }) => {
     (schedule) => schedule.month === month && schedule.day === day
   );
 
-  const handleButtonClick = () => {
+  const handleButtonClick1 = () => {
     setIsClicked(!isClicked);
   };
+
+  const handleButtonClick2 = () => {
+    window.location.href = 'https://www.ticketlink.co.kr/sports/baseball/schedule#';
+  }
+
+  const handleButtonClick = () => {
+    handleButtonClick1();
+    handleButtonClick2();
+  }
 
   const handlePlusClick = () => {
     setShowInput(true);

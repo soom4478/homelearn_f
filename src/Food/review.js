@@ -32,13 +32,13 @@ const Review = () => {
         const fetchStoreData = async () => {
             try {
                 // 음식점 데이터 가져오기
-                const storeResponse = await axios.get(`http://localhost:5000/api/foodshop/${process.env.REACT_APP_API_KEY}/${storeId}`);
+                const storeResponse = await axios.get(`http://3.138.127.122:5000/api/foodshop/${process.env.REACT_APP_API_KEY}/${storeId}`);
                 const fetchedStore = storeResponse.data;
                 setStore(fetchedStore);
 
 
                 // 리뷰 데이터 가져오기
-                const reviewResponse = await axios.get(`http://localhost:5000/api/foodshopreview/${process.env.REACT_APP_API_KEY}/${storeId}`);
+                const reviewResponse = await axios.get(`http://3.138.127.122:5000/api/foodshopreview/${process.env.REACT_APP_API_KEY}/${storeId}`);
                 setReviews(reviewResponse.data); // 리뷰 데이터 설정
             } catch (err) {
                 console.error(err);

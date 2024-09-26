@@ -32,7 +32,6 @@
   margin-bottom: 8px; 
 }
 
-
 .info-box {
   background-color: #ffffff;
   border-radius: 15px;
@@ -42,6 +41,10 @@
 
 .info-section {
   margin-bottom: 24px;
+  justify-content: space-between;
+  display: flex; /* 추가된 부분 */
+  flex-wrap: wrap; /* 추가된 부분 */
+  align-items: center; /* 추가된 부분 */
 }
 
 .label-text {
@@ -73,7 +76,7 @@
 
 .content-text {
   font-size: 15px;
-  color: #009788  ;
+  color: #009788;
   text-align: left; 
   margin-right: 50px;  
   margin-top: 0px;
@@ -84,8 +87,7 @@
 .content-text2 {
   font-size: 15px;
   color: #767676;
-  text-align: right;  
-  margin-left: 50px; 
+  text-align: right;   
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: Pretendard-SemiBold;
@@ -103,7 +105,7 @@
   margin-left: 15px;
 }
 
-.parking-box {                
+.parking-box {
   margin-top: 0px;
   padding: 30px;
   padding-left: 20px;
@@ -124,6 +126,19 @@
   font-size: 13px;
   color: #797979;
   font-family: Pretendard-SemiBold;
+}
+
+.spacing {
+  margin-left: 25px; /* 필요한 만큼 간격 조정 */
+}
+
+
+.parking-item {
+  display: flex; /* Flexbox 사용 */
+  justify-content: space-between; /* 나란히 배치 */
+  align-items: center; /* Y축 정렬 */
+  width: 100%; /* 너비 설정 */
+  margin-bottom: 8px; /* 간격 설정 */
 }
 
 .order-box {
@@ -147,9 +162,9 @@
 }
 
 .order-box:active {
-transform: scale(0.95);
-box-shadow: 0px 2px 4px #B0BEC5;
-background-color: rgba(255, 96, 191, 1);
+  transform: scale(0.95);
+  box-shadow: 0px 2px 4px #B0BEC5;
+  background-color: rgba(255, 96, 191, 1);
 }
 
 .order-image {
@@ -162,15 +177,14 @@ background-color: rgba(255, 96, 191, 1);
 }
 
 .order-text {
-font-size: 18px;
-color: white;
-text-align: right;
-margin-left: 10px;
-text-align: left;
-
+  font-size: 18px;
+  color: white;
+  text-align: right;
+  margin-left: 10px;
+  text-align: left;
 }
 
-.main-text{
+.main-text {
   font-size: 16px;
   color: black;
   font-family: Pretendard-SemiBold;
@@ -184,7 +198,7 @@ text-align: left;
   justify-content: space-between;
   justify-content: flex-end;
   font-family: Pretendard-SemiBold;
-} 
+}
 
 .view-details-button {
   font-size: 13px;
@@ -192,7 +206,7 @@ text-align: left;
   background: none;
   border: none;
   cursor: pointer;
-  margin-right: 24px;
+  margin-left: 250px;
   font-family: Pretendard-SemiBold;
 }
 

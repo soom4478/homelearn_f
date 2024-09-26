@@ -63,7 +63,7 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const handleButtonClick = () => {
+  const handleButtonClick1 = () => {
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
@@ -102,6 +102,15 @@ const Home = () => {
   const handleBellClick = () => {
     navigate("/notifications"); // "종" 버튼 클릭 시 /notifications 페이지로 이동
   };
+
+  const handleButtonClick2 = () => {
+    window.location.href = 'https://www.ticketlink.co.kr/sports/baseball/schedule#';
+  }
+
+  const handleButtonClick = () => {
+    handleButtonClick1();
+    handleButtonClick2();
+  }
 
   const sortedComuImfo = comuImfo.sort((a, b) => b.comu_heart - a.comu_heart);
 

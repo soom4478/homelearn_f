@@ -16,7 +16,7 @@ const Homeground = () => {
     const fetchHomegroundData = async () => {
       try {
         // 고정된 API URL 사용
-        const response = await fetch(`http://3.138.127.122:5000/api/homeground/${process.env.REACT_APP_API_KEY}`); 
+        const response = await fetch("http://3.138.127.122:5000/api/homeground/6VVQ0SB-C3X4PJQ-J3DZ587-5FGKYD1"); 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -83,7 +83,9 @@ const Homeground = () => {
           <div className="parking-box">
             <p className="label-text">주차장</p>
             <div className="info-section">  
-              <p className="main-text">{homegroundData.parking}</p>
+              <p className="parking-header">대전문창초등학교 운동장</p>
+              <p className="parking-text">운영 시간 <span className="spacing">주말 및 공휴일 경기 기간 경기 시작 1시간 전 ~</span></p>
+              <p className="parking-text">주차 비용<span className="spacing"> 무료</span></p>
             </div>
           </div>
 

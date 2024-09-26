@@ -23,7 +23,7 @@ const FoodDetail = () => {
   useEffect(() => {
     const fetchStore = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/foodshop/${process.env.REACT_APP_API_KEY}/${storeId}`);
+        const response = await axios.get(`http://3.138.127.122:5000/api/foodshop/${process.env.REACT_APP_API_KEY}/${storeId}`);
         setStore(response.data); // 가게 정보 상태 설정
         console.log(response.data); // 데이터를 콘솔에 출력하여 확인합니다.
       } catch (error) {
@@ -37,7 +37,7 @@ const FoodDetail = () => {
   useEffect(() => {
     const fetchMenus = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/foodshopmenu/${process.env.REACT_APP_API_KEY}/${storeId}`);
+        const response = await axios.get(`http://3.138.127.122:5000/api/foodshopmenu/${process.env.REACT_APP_API_KEY}/${storeId}`);
         setMenus(response.data); // 메뉴 상태 설정
         console.log(response.data); // 데이터를 콘솔에 출력하여 확인합니다.
       } catch (error) {
