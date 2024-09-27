@@ -25,16 +25,19 @@ const ReviewWrite = () => {
     };
 
     const handleCompleteClick = async () => {
+        // 로컬 스토리지에서 userId 가져오기
+        const userId = localStorage.getItem('userId');
+        
         // 필수 필드 체크
-        if (!storeId || !text.trim() || rating === 0) {
-            setError('모든 필드를 채워주세요. (상점, 리뷰 내용, 별점)');
+        if (!storeId || !text.trim() || rating === 0 || !userId) {
+            setError('모든 필드를 채워주세요. (상점, 리뷰 내용, 별점, 유저 아이디)');
             return;
         }
 
         try {
             const formData = new FormData();
             formData.append('shopId', storeId);
-            formData.append('userId', 1);  
+            formData.append('userId', userId);  // 로컬 스토리지에서 가져온 userId
             formData.append('content', text);
             formData.append('rating', rating);
             if (imageFile) {
@@ -43,14 +46,15 @@ const ReviewWrite = () => {
 
             const response = await axios.post(`http://localhost:5000/api/foodshopreview/${process.env.REACT_APP_API_KEY}`, formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'  
+                    'Content-Type': 'multipart/form-data'
                 }
             });
+            
 
             setReviews([...reviews, response.data]);
             navigate(-1);
         } catch (err) {
-            console.error(err);
+            console.error("Response data:", err.response ? err.response.data : err);
             setError('리뷰 작성에 실패했습니다.');
         }
     };

@@ -128,13 +128,13 @@ const FoodMain = () => {
             </div>
 
             <div className="container2">
-                <div className="display">
-                    <div className="text">
-                        <p id="beer1">대구 삼성라이온즈 파크에서</p>
-                        <h3 id="beer2">맥주 주문하기</h3>
-                    </div>
-                    <img id="beer_img" src={beer} alt="beer" />
+            <div className="display">
+                <div className="text">
+                    <p id="beer1">{selectedOption}에서</p> {/* 선택된 옵션 값으로 변경 */}
+                    <h3 id="beer2">맥주와 함께할 음식 추천받기</h3>
                 </div>
+                <img id="beer_img" src={beer} alt="beer" />
+            </div>
                 <div id="text2">
                     <p>인기매장 메뉴 추천</p>
                 </div>
